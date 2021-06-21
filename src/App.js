@@ -1,21 +1,30 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>
-          What's your target running cadence?
-        </h1>
-        <p>
-          Running cadence is the number of steps you take every minute. Most runner's aim for ~180.
-        </p>
-        <input type='number'></input>
-        <button>Next</button>
-      </header>
-    </div>
-  );
+class App extends Component {
+  reneder() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <form>
+            <label htmlFor="cadence">
+              <h1>What's your target running cadence?</h1>
+            </label>
+            <br />
+            <input
+              id="cadence"
+              type="number"
+            />
+            <button>
+              Next
+            </button>
+          </form>
+        </header>
+      </div>
+    )
+  }
+  
 }
 
 export default App;
