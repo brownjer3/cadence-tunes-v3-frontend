@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import { Component } from 'react';
 import './App.css';
+import Cadence from './Cadence'
 
 class App extends Component {
 
@@ -14,22 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <form>
-            <label htmlFor="cadence">
-              <h1>
-                What's your target running cadence?
-              </h1>
-              <h3>{this.state.cadence}</h3>
-            </label>
-            <input
-              id="cadence"
-              type="number"
-              onChange={this.handleChange}
-            />
-            <button>
-              Next
-            </button>
-          </form>
+          <Cadence handleChange={this.handleChange} handleSubmit={this.handleSubmit} cadence={this.state.cadence}/>
         </header>
       </div>
     )
@@ -37,6 +23,13 @@ class App extends Component {
 
   handleChange = (e) => {
     this.setState({cadence: e.target.value})
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    // need to add a validation check here to ensure cadence is within range
+    // change prompt text to "Target Cadence: X" and change CSS to move to top of page
+    // display Spotify genre options
   }
   
 }
