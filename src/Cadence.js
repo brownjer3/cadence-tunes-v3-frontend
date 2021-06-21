@@ -1,4 +1,3 @@
-
 function Cadence(props) {
 
     return (
@@ -12,6 +11,7 @@ function Cadence(props) {
                 </label>
                 <input
                     id="cadence"
+                    name="cadence"
                     type="number"
                     onChange={props.handleChange}
                     value={props.cadence}

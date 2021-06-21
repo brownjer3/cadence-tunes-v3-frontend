@@ -2,6 +2,7 @@
 import { Component } from 'react';
 import './App.css';
 import Cadence from './Cadence'
+import Genres from './Genres'
 
 class App extends Component {
 
@@ -16,13 +17,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Cadence handleChange={this.handleChange} handleSubmit={this.handleSubmit} cadence={this.state.cadence}/>
+          <Genres genres={this.state.genres}/>
         </header>
       </div>
     )
   }
 
   handleChange = (e) => {
-    this.setState({cadence: e.target.value})
+    this.setState({[e.target.name]: e.target.value})
   }
 
   handleSubmit = (e) => {
