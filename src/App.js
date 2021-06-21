@@ -3,18 +3,28 @@ import { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  reneder() {
+
+  state = {
+    cadence: 0, 
+    genres: [], 
+    recommendations: []
+  }
+
+  render() {
     return (
       <div className="App">
         <header className="App-header">
           <form>
             <label htmlFor="cadence">
-              <h1>What's your target running cadence?</h1>
+              <h1>
+                What's your target running cadence?
+              </h1>
+              <h3>{this.state.cadence}</h3>
             </label>
-            <br />
             <input
               id="cadence"
               type="number"
+              onChange={this.handleChange}
             />
             <button>
               Next
@@ -23,6 +33,10 @@ class App extends Component {
         </header>
       </div>
     )
+  }
+
+  handleChange = (e) => {
+    this.setState({cadence: e.target.value})
   }
   
 }
