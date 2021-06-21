@@ -2,7 +2,11 @@ function Genres(props) {
 
     return (
         <div>
-            <h1>{props.genres}</h1>
+            <h1>Genres: {props.genres}</h1>
+            <input
+                name="genres"
+                onChange={props.handleChange}
+            ></input>
         </div>
     )
 }

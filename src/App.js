@@ -15,9 +15,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <p>cadence: {this.state.cadence}</p>
+        <p>genres: {this.state.genres}</p>
         <header className="App-header">
           <Cadence handleChange={this.handleChange} handleSubmit={this.handleSubmit} cadence={this.state.cadence}/>
-          <Genres genres={this.state.genres}/>
+          <Genres genres={this.state.genres} handleChange={this.handleChange}/>
         </header>
       </div>
     )
